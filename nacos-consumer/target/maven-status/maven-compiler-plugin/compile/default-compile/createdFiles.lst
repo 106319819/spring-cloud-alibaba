@@ -1,0 +1,12 @@
+com\nacos\consumer\config\GrayLoadBalancerConfig.class
+com\nacos\consumer\controller\HelloController.class
+com\nacos\consumer\config\NacosDiscoveryConfiguration.class
+com\nacos\consumer\config\FeignClientConfiguration.class
+com\nacos\consumer\NacosConsumerApplication.class
+com\nacos\consumer\feign\ConfigService.class
+com\nacos\consumer\gray\GrayRule.class
+com\nacos\consumer\config\LoadBalanceConfiguration.class
+com\nacos\consumer\aspect\DubboRpcContextAspect.class
+com\nacos\consumer\gray\GrayLoadBalancer.class
+com\nacos\consumer\gray\FeignRequestInterceptor.class
+com\nacos\consumer\gray\GrayInterceptor.class

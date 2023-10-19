@@ -1,0 +1,58 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8090
+
+# Nacos帮助文档: https://nacos.io/zh-cn/docs/concepts.html
+#spring.application.name=nacos-service
+# Nacos认证信息
+#spring.cloud.nacos.discovery.username=nacos
+#spring.cloud.nacos.discovery.password=nacos
+# Nacos 服务发现与注册配置，其中子属性 server-addr 指定 Nacos 服务器主机和端口
+#spring.cloud.nacos.discovery.server-addr=mse-6d50f4f0-p.nacos-ans.mse.aliyuncs.com:8848
+# 注册到 nacos 的指定 namespace，默认为 public
+#spring.cloud.nacos.discovery.namespace=public
+
+spring:
+  application:
+    name: nacos-consumer
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.3.10:8848
+        file-extension: yml
+      discovery:
+        username: nacos
+        password: nacos
+        server-addr: 192.168.3.10:8848
+  config:
+    import:
+      - nacos:nacos-consumer-dev.yml?refresh=true
+
+    loadbalancer:
+      ribbon:
+        enabled: false
+      nacos:
+        enabled: true
+
+    sentinel:
+      transport:
+        dashboard: 192.168.3.10:8948
+
+feign:
+  sentinel:
+    enabled: true
+
+#灰度规则定义，支持头及参数两种方式
+gray:
+  rule:
+    type: header # header 为请求头 , param 为请求参数
+    name: gray
+    value: true
+
+dubbo:
+  registry:
+    address: nacos://${spring.cloud.nacos.discovery.server-addr}?username=${spring.cloud.nacos.discovery.username}&password=${spring.cloud.nacos.discovery.password}
+    parameters.namespace: dubbo
+  protocol:
+    name: dubbo
+    port: -1

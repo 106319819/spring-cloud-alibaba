@@ -1,0 +1,3 @@
+com\nacos\consumer\CloudConsumerApplicationTests.class
+com\nacos\consumer\SpringBootBaseTest.class
+com\nacos\consumer\controller\HelloControllerTest.class
