@@ -1,7 +1,0 @@
-com\nacos\provider\controller\HelloControllerTest.class
-com\nacos\provider\ConfigClientTest.class
-com\nacos\provider\controller\ConfigControllerTest.class
-com\nacos\provider\cloudprovider\CloudProviderApplicationTests.class
-com\nacos\provider\CloudProviderApplicationTests.class
-com\nacos\provider\SpringBootBaseTest.class
-com\nacos\provider\ConfigClientTest$1.class
