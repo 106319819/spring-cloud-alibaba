@@ -1,6 +1,0 @@
-com.nacos.consumer
-com.nacos.consumer.aspect
-com.nacos.consumer.config
-com.nacos.consumer.controller
-com.nacos.consumer.feign
-com.nacos.consumer.gray
